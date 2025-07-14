@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Scientist CV • Your Name</title>
+  <title>Danil Feldman BSc CV</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     /* ======= CSS RESET ======= */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -16,7 +18,7 @@
       --card:#ffffff;
       --text:#1a1a1a;
       --muted:#555;
-      --line:#d0d7de;
+      --line:#bcc1c7;
       --radius:0.5rem;
       --shadow:0 4px 12px rgba(0,0,0,0.05);
     }
@@ -34,14 +36,23 @@
       }
     }
 
-    html.dark{
-      --accent:#2f81f7;
-      --bg:#0d1117;
-      --card:#161b22;
-      --text:#c9d1d9;
-      --muted:#8b949e;
-      --line:#30363d;
-      --shadow:none;
+    html.dark, html.dark:root {
+      --accent:#2f81f7 !important;
+      --bg:#0d1117 !important;
+      --card:#161b22 !important;
+      --text:#c9d1d9 !important;
+      --muted:#8b949e !important;
+      --line:#30363d !important;
+      --shadow:none !important;
+    }
+    html.light, html.light:root {
+      --accent:#0067b8 !important;
+      --bg:#f2f6fa !important;
+      --card:#ffffff !important;
+      --text:#1a1a1a !important;
+      --muted:#555 !important;
+      --line:#bcc1c7 !important;
+      --shadow:0 4px 12px rgba(0,0,0,0.05) !important;
     }
 
     body{
@@ -96,7 +107,7 @@
     }
 
     /* ======= GRID ======= */
-    .grid{display:grid;grid-template-columns:280px 1fr;gap:2rem;padding:2rem;}
+.grid{display:grid;grid-template-columns:320px 1fr;gap:2rem;padding:2rem;}
     @media(max-width:800px){.grid{grid-template-columns:1fr;}}
 
     /* ======= SIDEBAR ======= */
@@ -105,7 +116,11 @@
     .card h2{font-size:1.1rem;margin-bottom:0.75rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.5px;}
 
     .contact-item{display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;}
-    .icon{width:1rem;height:1rem;stroke:var(--accent);stroke-width:1.8;fill:none;}
+.icon{width:1rem !important;height:1rem !important;display:inline-block;}
+.contact-item span, .contact-item a {
+  word-break: break-all;
+  overflow-wrap: anywhere;
+}
 
     .badge{display:inline-block;background:var(--accent);color:#fff;border-radius:999px;padding:0 0.6rem;font-size:0.75rem;margin:0 0.3rem 0.3rem 0;}
 
@@ -133,8 +148,8 @@
     <!-- ======= PROFILE HEADER ======= -->
     <header>
       <img src="https://via.placeholder.com/240x240.png?text=Photo" alt="Profile photo">
-      <h1>Your Full Name, PhD</h1>
-      <p class="title">Senior Research Scientist • Organic & Chemical Biology</p>
+      <h1>Danil Feldman, BSc</h1>
+      <p class="title">Research Scientist • Organic Synthesis</p>
       <button id="theme-toggle">Dark Mode</button>
     </header>
 
@@ -146,50 +161,24 @@
         <div class="card">
           <h2>Contact</h2>
           <div class="contact-item">
-            <!-- Map/Location Icon -->
-            <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 11.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
-              <path d="M19.5 11.5C19.5 16.194 12 22 12 22s-7.5-5.806-7.5-10.5a7.5 7.5 0 1 1 15 0z" />
-            </svg>
-            <span>123 Science Rd, City, Country</span>
+            <i class="fa-solid fa-envelope icon" style="color:var(--accent);"></i>
+            <span><a href="mailto:cbf.21.feldman.danil@gmail.com">cbf.21.feldman.danil@gmail.com</a></span>
           </div>
           <div class="contact-item">
-            <!-- Phone Icon -->
-            <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M2.25 6.75a1.5 1.5 0 0 1 1.5-1.5h1.636a1.5 1.5 0 0 1 1.415 1.02c.158.472.338.939.54 1.402a1.5 1.5 0 0 1-.117 1.555l-1.123 1.123a15.048 15.048 0 0 0 6.636 6.636l1.123-1.123a1.5 1.5 0 0 1 1.555-.117c.463.202.93.382 1.402.54a1.5 1.5 0 0 1 1.02 1.415v1.636a1.5 1.5 0 0 1-1.5 1.5h-.75C9.388 21.75 2.25 14.612 2.25 6.75v-.75z" />
-            </svg>
-            <span>+123 456 7890</span>
+            <i class="fa-solid fa-globe icon" style="color:var(--accent);"></i>
+            <span><a href="https://danil.feldman.md">danil.feldman.md</a></span>
           </div>
           <div class="contact-item">
-            <!-- Mail Icon -->
-            <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 5.75A2.75 2.75 0 0 1 5.75 3h12.5A2.75 2.75 0 0 1 21 5.75v12.5A2.75 2.75 0 0 1 18.25 21H5.75A2.75 2.75 0 0 1 3 18.25V5.75z" />
-              <path d="M3 6l9 7 9-7" />
-            </svg>
-            <span><a href="mailto:name@email.com">name@email.com</a></span>
+            <i class="fa-solid fa-id-badge icon" style="color:var(--accent);"></i>
+            <span><a href="https://orcid.org/0009-0003-5402-9861">0009-0003-5402-9861</a></span>
           </div>
           <div class="contact-item">
-            <!-- Globe Icon -->
-            <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="9" />
-              <path d="M2 12h20M12 3a15 15 0 0 1 0 18M3 9a15 15 0 0 0 18 0" />
-            </svg>
-            <span><a href="https://your-website.com">your-website.com</a></span>
+            <i class="fa-brands fa-github icon" style="color:var(--accent);"></i>
+            <span><a href="https://github.com/Perfluorodecalin">perfluorodecalin</a></span>
           </div>
           <div class="contact-item">
-            <!-- Link Icon -->
-            <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M10 14L21 3M21 3h-6M21 3v6" />
-            </svg>
-            <span><a href="https://orcid.org/0000-0000-0000-0000">ORCID</a></span>
-          </div>
-          <div class="contact-item">
-            <!-- Briefcase Icon -->
-            <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 3h6a1 1 0 0 1 1 1v2h5a1 1 0 0 1 1 1v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a1 1 0 0 1 1-1h5V4a1 1 0 0 1 1-1z" />
-              <path d="M3 13h18" />
-            </svg>
-            <span><a href="https://linkedin.com/in/username">LinkedIn</a></span>
+            <i class="fa-solid fa-graduation-cap icon" style="color:var(--accent);"></i>
+            <span><a href="https://scholar.google.com/citations?user=t5SsEo0AAAAJ">Google Scholar</a></span>
           </div>
         </div>
 
@@ -197,10 +186,9 @@
         <div class="card">
           <h2>Research Interests</h2>
           <ul>
-            <li>Chemical biology of natural products</li>
+            <li>Organic Synthesis of biologically active compounds</li>
             <li>AI-driven drug discovery</li>
             <li>High-throughput synthesis automation</li>
-            <li>Protein engineering &amp; CRISPR screens</li>
           </ul>
         </div>
 
@@ -208,21 +196,20 @@
         <div class="card">
           <h2>Skills</h2>
           <p>
-            <span class="badge">LC-MS</span>
-            <span class="badge">Flow Chemistry</span>
-            <span class="badge">Python</span>
-            <span class="badge">Machine Learning</span>
-            <span class="badge">R</span>
+            <span class="badge">Organic synthesis and purification</span>
             <span class="badge">Spectroscopy</span>
+            <span class="badge">Data Analysis</span>
           </p>
         </div>
 
         <!-- LANGUAGES -->
         <div class="card">
           <h2>Languages</h2>
+          <p><strong>Russian</strong> – Native</p>
           <p><strong>English</strong> – C2</p>
-          <p><strong>German</strong> – B1</p>
           <p><strong>Romanian</strong> – C2</p>
+          <p><strong>German</strong> – A2</p>
+          
         </div>
 
         <!-- DOWNLOAD -->
@@ -236,7 +223,7 @@
         <!-- SUMMARY -->
         <section id="summary">
           <h2>Profile</h2>
-          <p>Innovative research scientist with 10+ years of experience at the intersection of synthetic organic chemistry, molecular biology, and AI. Proven track record of leading multidisciplinary projects, securing competitive grants, and publishing in high-impact journals.</p>
+          <p>Placeholder</p>
         </section>
 
         <!-- WORK EXPERIENCE -->
@@ -244,17 +231,10 @@
           <h2>Work Experience</h2>
           <div class="item">
             <div class="item-header">
-              <h3>Senior Scientist – XYZ Institute of Chemical Biology</h3>
-              <span>Jan 2020 – Present</span>
+              <h3>Researcher - Laboratory of Organic Synthesis, Institute of Chemistry, Moldova</h3>
+              <span>2023 – Present</span>
             </div>
-            <p>Lead a team of 6 in developing machine-learning-guided synthesis workflows for covalent kinase inhibitors. Implemented a self-driving flow-chemistry platform, reducing optimization time by 70%.</p>
-          </div>
-          <div class="item">
-            <div class="item-header">
-              <h3>Postdoctoral Researcher – ABC University</h3>
-              <span>Sep 2017 – Dec 2019</span>
-            </div>
-            <p>Discovered a novel class of bioorthogonal probes for live-cell imaging, resulting in 3 peer-reviewed publications and a patent application.</p>
+            <p>Working on synthesis of biologically active compounds, including coordination compounds, based on natural compound scaffolds.</p>
           </div>
         </section>
 
@@ -263,65 +243,65 @@
           <h2>Education &amp; Training</h2>
           <div class="item">
             <div class="item-header">
-              <h3>PhD in Chemical Biology – ABC University</h3>
-              <span>2013 – 2017</span>
+              <h3>BSc in Molecular Biology, Moldova State University</h3>
+              <span>2024 – current</span>
             </div>
-            <p>Thesis: "Chemo-selective Modification of Protein Lysine Residues" (Supervisor: Prof. Jane Doe)</p>
+            <p>Participated in the summer school "Path toward scientific discovery" at the Moldovan Academy of Sciences. (23-27 Jun 2025)</p>
           </div>
           <div class="item">
             <div class="item-header">
-              <h3>MSc in Organic Chemistry – DEF University</h3>
-              <span>2011 – 2013</span>
+              <h3>BSc in Biopharmaceutical Chemistry, Moldova State University</h3>
+              <span>2021 – 2024</span>
             </div>
+            <p>Thesis: "Synthesis and study of 2-acetylpyridine selenosemicarbazone and some Cu(II) and Bi(III) complexes based on it". (Supervisors: Prof. Bulimestru Ion; Prof. Claus Jacob)</p>
+            <p>Valedictorian. Completed an Erasmus+ research mobility at the Institute of Biorganic Chemistry, University of Saarland, Germany.</p>
+            
           </div>
         </section>
 
         <!-- PUBLICATIONS -->
         <section id="publications">
-          <h2>Selected Publications</h2>
+          <h2>Publications</h2>
           <ul>
-            <li>Doe J., <strong>You N.</strong> et al. "AI-Directed Synthesis of Kinase Inhibitors." <em>Nature Chem.</em> 2025.</li>
-            <li><strong>You N.</strong>, Smith A. "Bioorthogonal Probes for Live-Cell Imaging." <em>JACS</em> 2023.</li>
-            <li><strong>You N.</strong> et al. "Automated Flow Platform for Peptide Macrocyclization." <em>Science</em> 2022.</li>
+            <li>Doe J., <strong>You N.</strong> et al. "placeholder" <em>Nature Chem.</em> 2025.</li>
+
           </ul>
         </section>
 
-        <!-- GRANTS -->
-        <section id="grants">
-          <h2>Projects &amp; Grants</h2>
-          <div class="item">
-            <div class="item-header">
-              <h3>ERC Starting Grant – "Self-Driving Synthesis"</h3>
-              <span>€1.5 M · 2024 – 2029</span>
-            </div>
-            <p>Developing an autonomous microfluidic platform integrating AI planning, synthesis, and high-content screening.</p>
-          </div>
-        </section>
-
-        <!-- MEMBERSHIPS -->
-        <section id="memberships">
-          <h2>Memberships &amp; Activities</h2>
-          <ul>
-            <li>Member, American Chemical Society (ACS)</li>
-            <li>Reviewer, <em>Nature Chemical Biology</em>, <em>Angew. Chem.</em></li>
-            <li>Mentor, Women in STEM Initiative</li>
-          </ul>
-        </section>
+        <!-- ADDITIONAL SECTIONS -->
       </main>
     </div>
   </div>
   <script>
-    const toggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-    const stored = localStorage.getItem('theme');
-    if (stored === 'dark') {
-      html.classList.add('dark');
-    }
-    toggle.textContent = html.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
-    toggle.addEventListener('click', () => {
-      const dark = html.classList.toggle('dark');
-      localStorage.setItem('theme', dark ? 'dark' : 'light');
-      toggle.textContent = dark ? 'Light Mode' : 'Dark Mode';
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggle = document.getElementById('theme-toggle');
+      const html = document.documentElement;
+      if (!toggle) return;
+      function getPreferredTheme() {
+        const stored = localStorage.getItem('theme');
+        if (stored) return stored;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      function applyTheme(theme) {
+        if (theme === 'dark') {
+          html.classList.add('dark');
+          html.classList.remove('light');
+          toggle.textContent = 'Light Mode';
+        } else {
+          html.classList.add('light');
+          html.classList.remove('dark');
+          toggle.textContent = 'Dark Mode';
+        }
+        console.log('Theme applied:', theme);
+      }
+      // Initial theme setup
+      applyTheme(getPreferredTheme());
+      // Toggle theme on button click
+      toggle.addEventListener('click', function() {
+        const isDark = !html.classList.contains('dark');
+        applyTheme(isDark ? 'dark' : 'light');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      });
     });
   </script>
 </body>
