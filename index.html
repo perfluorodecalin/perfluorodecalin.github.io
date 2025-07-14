@@ -34,6 +34,16 @@
       }
     }
 
+    html.dark{
+      --accent:#2f81f7;
+      --bg:#0d1117;
+      --card:#161b22;
+      --text:#c9d1d9;
+      --muted:#8b949e;
+      --line:#30363d;
+      --shadow:none;
+    }
+
     body{
       font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
       line-height:1.6;
@@ -73,6 +83,17 @@
     }
     header h1{font-size:2rem;font-weight:700;}
     header p.title{font-size:1.1rem;font-weight:500;opacity:0.9;}
+    #theme-toggle{
+      position:fixed;
+      top:1rem;
+      right:1rem;
+      background:var(--card);
+      color:var(--text);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:0.3rem 0.6rem;
+      cursor:pointer;
+    }
 
     /* ======= GRID ======= */
     .grid{display:grid;grid-template-columns:280px 1fr;gap:2rem;padding:2rem;}
@@ -114,6 +135,7 @@
       <img src="https://via.placeholder.com/240x240.png?text=Photo" alt="Profile photo">
       <h1>Your Full Name, PhD</h1>
       <p class="title">Senior Research Scientist • Organic & Chemical Biology</p>
+      <button id="theme-toggle">Dark Mode</button>
     </header>
 
     <!-- ======= TWO-COLUMN GRID ======= -->
@@ -288,5 +310,19 @@
       </main>
     </div>
   </div>
+  <script>
+    const toggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    const stored = localStorage.getItem('theme');
+    if (stored === 'dark') {
+      html.classList.add('dark');
+    }
+    toggle.textContent = html.classList.contains('dark') ? 'Light Mode' : 'Dark Mode';
+    toggle.addEventListener('click', () => {
+      const dark = html.classList.toggle('dark');
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+      toggle.textContent = dark ? 'Light Mode' : 'Dark Mode';
+    });
+  </script>
 </body>
 </html>
