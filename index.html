@@ -1,1 +1,292 @@
-<h1>Hello world!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scientist CV • Your Name</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* ======= CSS RESET ======= */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+
+    /* ======= LIGHT THEME ======= */
+    :root{
+      --accent:#0067b8;           /* Europass blue */
+      --bg:#f2f6fa;              /* light background */
+      --card:#ffffff;
+      --text:#1a1a1a;
+      --muted:#555;
+      --line:#d0d7de;
+      --radius:0.5rem;
+      --shadow:0 4px 12px rgba(0,0,0,0.05);
+    }
+
+    /* ======= DARK THEME (uses OS/browser preference) ======= */
+    @media (prefers-color-scheme: dark){
+      :root{
+        --accent:#2f81f7;
+        --bg:#0d1117;
+        --card:#161b22;
+        --text:#c9d1d9;
+        --muted:#8b949e;
+        --line:#30363d;
+        --shadow:none;
+      }
+    }
+
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.6;
+      color:var(--text);
+      background:var(--bg);
+      padding:2rem 1rem;
+    }
+
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .container{
+      max-width:1200px;
+      margin:0 auto;
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      border:1px solid var(--line);
+    }
+
+    /* ======= HEADER ======= */
+    header{
+      background:var(--accent);
+      color:#fff;
+      padding:2.5rem 2rem;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:1rem;
+    }
+    header img{
+      width:120px; height:120px;
+      border-radius:50%; object-fit:cover;
+      border:4px solid #fff;
+    }
+    header h1{font-size:2rem;font-weight:700;}
+    header p.title{font-size:1.1rem;font-weight:500;opacity:0.9;}
+
+    /* ======= GRID ======= */
+    .grid{display:grid;grid-template-columns:280px 1fr;gap:2rem;padding:2rem;}
+    @media(max-width:800px){.grid{grid-template-columns:1fr;}}
+
+    /* ======= SIDEBAR ======= */
+    aside{display:flex;flex-direction:column;gap:1.5rem;}
+    .card{padding:1.25rem 1.5rem;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);}
+    .card h2{font-size:1.1rem;margin-bottom:0.75rem;color:var(--accent);text-transform:uppercase;letter-spacing:0.5px;}
+
+    .contact-item{display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;}
+    .icon{width:1rem;height:1rem;stroke:var(--accent);stroke-width:1.8;fill:none;}
+
+    .badge{display:inline-block;background:var(--accent);color:#fff;border-radius:999px;padding:0 0.6rem;font-size:0.75rem;margin:0 0.3rem 0.3rem 0;}
+
+    /* ======= MAIN CONTENT ======= */
+    main{display:flex;flex-direction:column;gap:2rem;}
+    section{display:flex;flex-direction:column;gap:1rem;}
+    section h2{font-size:1.5rem;border-bottom:2px solid var(--accent);padding-bottom:0.4rem;}
+    .item{display:flex;flex-direction:column;gap:0.3rem;}
+    .item-header{display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;}
+    .item-header h3{font-size:1rem;font-weight:600;}
+    .item-header span{font-size:0.9rem;font-weight:500;color:var(--accent);} 
+    .item p{font-size:0.95rem;color:var(--muted);} 
+
+    /* ======= PRINT ======= */
+    @media print{
+      body{background:#fff;}
+      .container{box-shadow:none;margin:0;border:none;}
+      header{border-bottom:1px solid var(--line);}
+      .grid{gap:1rem;}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- ======= PROFILE HEADER ======= -->
+    <header>
+      <img src="https://via.placeholder.com/240x240.png?text=Photo" alt="Profile photo">
+      <h1>Your Full Name, PhD</h1>
+      <p class="title">Senior Research Scientist • Organic & Chemical Biology</p>
+    </header>
+
+    <!-- ======= TWO-COLUMN GRID ======= -->
+    <div class="grid">
+      <!-- ======= SIDEBAR ======= -->
+      <aside>
+        <!-- CONTACT INFO -->
+        <div class="card">
+          <h2>Contact</h2>
+          <div class="contact-item">
+            <!-- Map/Location Icon -->
+            <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 11.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+              <path d="M19.5 11.5C19.5 16.194 12 22 12 22s-7.5-5.806-7.5-10.5a7.5 7.5 0 1 1 15 0z" />
+            </svg>
+            <span>123 Science Rd, City, Country</span>
+          </div>
+          <div class="contact-item">
+            <!-- Phone Icon -->
+            <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2.25 6.75a1.5 1.5 0 0 1 1.5-1.5h1.636a1.5 1.5 0 0 1 1.415 1.02c.158.472.338.939.54 1.402a1.5 1.5 0 0 1-.117 1.555l-1.123 1.123a15.048 15.048 0 0 0 6.636 6.636l1.123-1.123a1.5 1.5 0 0 1 1.555-.117c.463.202.93.382 1.402.54a1.5 1.5 0 0 1 1.02 1.415v1.636a1.5 1.5 0 0 1-1.5 1.5h-.75C9.388 21.75 2.25 14.612 2.25 6.75v-.75z" />
+            </svg>
+            <span>+123 456 7890</span>
+          </div>
+          <div class="contact-item">
+            <!-- Mail Icon -->
+            <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 5.75A2.75 2.75 0 0 1 5.75 3h12.5A2.75 2.75 0 0 1 21 5.75v12.5A2.75 2.75 0 0 1 18.25 21H5.75A2.75 2.75 0 0 1 3 18.25V5.75z" />
+              <path d="M3 6l9 7 9-7" />
+            </svg>
+            <span><a href="mailto:name@email.com">name@email.com</a></span>
+          </div>
+          <div class="contact-item">
+            <!-- Globe Icon -->
+            <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M2 12h20M12 3a15 15 0 0 1 0 18M3 9a15 15 0 0 0 18 0" />
+            </svg>
+            <span><a href="https://your-website.com">your-website.com</a></span>
+          </div>
+          <div class="contact-item">
+            <!-- Link Icon -->
+            <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 14L21 3M21 3h-6M21 3v6" />
+            </svg>
+            <span><a href="https://orcid.org/0000-0000-0000-0000">ORCID</a></span>
+          </div>
+          <div class="contact-item">
+            <!-- Briefcase Icon -->
+            <svg class="icon" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 3h6a1 1 0 0 1 1 1v2h5a1 1 0 0 1 1 1v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a1 1 0 0 1 1-1h5V4a1 1 0 0 1 1-1z" />
+              <path d="M3 13h18" />
+            </svg>
+            <span><a href="https://linkedin.com/in/username">LinkedIn</a></span>
+          </div>
+        </div>
+
+        <!-- RESEARCH INTERESTS -->
+        <div class="card">
+          <h2>Research Interests</h2>
+          <ul>
+            <li>Chemical biology of natural products</li>
+            <li>AI-driven drug discovery</li>
+            <li>High-throughput synthesis automation</li>
+            <li>Protein engineering &amp; CRISPR screens</li>
+          </ul>
+        </div>
+
+        <!-- SKILLS -->
+        <div class="card">
+          <h2>Skills</h2>
+          <p>
+            <span class="badge">LC-MS</span>
+            <span class="badge">Flow Chemistry</span>
+            <span class="badge">Python</span>
+            <span class="badge">Machine Learning</span>
+            <span class="badge">R</span>
+            <span class="badge">Spectroscopy</span>
+          </p>
+        </div>
+
+        <!-- LANGUAGES -->
+        <div class="card">
+          <h2>Languages</h2>
+          <p><strong>English</strong> – C2</p>
+          <p><strong>German</strong> – B1</p>
+          <p><strong>Romanian</strong> – C2</p>
+        </div>
+
+        <!-- DOWNLOAD -->
+        <div class="card" style="text-align:center;">
+          <p><a href="#" download>Download PDF</a></p>
+        </div>
+      </aside>
+
+      <!-- ======= MAIN CONTENT ======= -->
+      <main>
+        <!-- SUMMARY -->
+        <section id="summary">
+          <h2>Profile</h2>
+          <p>Innovative research scientist with 10+ years of experience at the intersection of synthetic organic chemistry, molecular biology, and AI. Proven track record of leading multidisciplinary projects, securing competitive grants, and publishing in high-impact journals.</p>
+        </section>
+
+        <!-- WORK EXPERIENCE -->
+        <section id="experience">
+          <h2>Work Experience</h2>
+          <div class="item">
+            <div class="item-header">
+              <h3>Senior Scientist – XYZ Institute of Chemical Biology</h3>
+              <span>Jan 2020 – Present</span>
+            </div>
+            <p>Lead a team of 6 in developing machine-learning-guided synthesis workflows for covalent kinase inhibitors. Implemented a self-driving flow-chemistry platform, reducing optimization time by 70%.</p>
+          </div>
+          <div class="item">
+            <div class="item-header">
+              <h3>Postdoctoral Researcher – ABC University</h3>
+              <span>Sep 2017 – Dec 2019</span>
+            </div>
+            <p>Discovered a novel class of bioorthogonal probes for live-cell imaging, resulting in 3 peer-reviewed publications and a patent application.</p>
+          </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education">
+          <h2>Education &amp; Training</h2>
+          <div class="item">
+            <div class="item-header">
+              <h3>PhD in Chemical Biology – ABC University</h3>
+              <span>2013 – 2017</span>
+            </div>
+            <p>Thesis: "Chemo-selective Modification of Protein Lysine Residues" (Supervisor: Prof. Jane Doe)</p>
+          </div>
+          <div class="item">
+            <div class="item-header">
+              <h3>MSc in Organic Chemistry – DEF University</h3>
+              <span>2011 – 2013</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- PUBLICATIONS -->
+        <section id="publications">
+          <h2>Selected Publications</h2>
+          <ul>
+            <li>Doe J., <strong>You N.</strong> et al. "AI-Directed Synthesis of Kinase Inhibitors." <em>Nature Chem.</em> 2025.</li>
+            <li><strong>You N.</strong>, Smith A. "Bioorthogonal Probes for Live-Cell Imaging." <em>JACS</em> 2023.</li>
+            <li><strong>You N.</strong> et al. "Automated Flow Platform for Peptide Macrocyclization." <em>Science</em> 2022.</li>
+          </ul>
+        </section>
+
+        <!-- GRANTS -->
+        <section id="grants">
+          <h2>Projects &amp; Grants</h2>
+          <div class="item">
+            <div class="item-header">
+              <h3>ERC Starting Grant – "Self-Driving Synthesis"</h3>
+              <span>€1.5 M · 2024 – 2029</span>
+            </div>
+            <p>Developing an autonomous microfluidic platform integrating AI planning, synthesis, and high-content screening.</p>
+          </div>
+        </section>
+
+        <!-- MEMBERSHIPS -->
+        <section id="memberships">
+          <h2>Memberships &amp; Activities</h2>
+          <ul>
+            <li>Member, American Chemical Society (ACS)</li>
+            <li>Reviewer, <em>Nature Chemical Biology</em>, <em>Angew. Chem.</em></li>
+            <li>Mentor, Women in STEM Initiative</li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
